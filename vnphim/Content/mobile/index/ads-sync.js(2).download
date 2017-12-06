@@ -1,0 +1,9 @@
+var bsinflowOptions = {vastURL: "https://blueserving.com/vast.xml?key=3c164d18056e0cd74c16a9474c7e1fef&vastv=3.0&t=1511403291185"};   
+    (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "//static.hadarone.com/ajs/outstream/inflow/bsinflow.js?v=" + new Date().getTime();
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'bsinflow'));

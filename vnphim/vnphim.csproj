@@ -1,0 +1,823 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F14FEFE5-7357-4953-B97D-CF50AA725F6A}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>vnphim</RootNamespace>
+    <AssemblyName>vnphim</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.AI.Agent.Intercept, Version=2.0.6.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.0.6\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.2.0\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.2.0\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.2.0\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.2.0\lib\net45\Microsoft.AI.Web.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.2.0\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.2.0\lib\net45\Microsoft.ApplicationInsights.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.4.1.9004\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="cdn-cgi\scripts\0e574bed\cloudflare-static\email-decode.min.js" />
+    <Content Include="code.createjs.com\createjs-2015.11.26.min.js" />
+    <Content Include="Content\detaildes\12654498_1546755785634854_7926964408742783300_n.png" />
+    <Content Include="Content\detaildes\16708654_733416290151255_7047472006401585615_n.jpg" />
+    <Content Include="Content\detaildes\18622464_130477990848253_6483211643734529811_n.jpg" />
+    <Content Include="Content\detaildes\19113659_10207528246522978_6488888743943870431_n.jpg" />
+    <Content Include="Content\detaildes\1f642.png" />
+    <Content Include="Content\detaildes\20-nam-ki-niem-harry-potter-nhung-nguoi-ban-khong-bao-gio-lon-trong-long-8x-9x.jpg" />
+    <Content Include="Content\detaildes\20294105_268716076945485_1369212782034205097_n.jpg" />
+    <Content Include="Content\detaildes\20638398_2031312590448017_2854435157453901211_n.jpg" />
+    <Content Include="Content\detaildes\20915116_468460180193529_3053259564791130673_n.jpg" />
+    <Content Include="Content\detaildes\21150253_903977269753826_3815489268456440166_n.jpg" />
+    <Content Include="Content\detaildes\21558810_564048293986706_1872829243919331602_n.jpg" />
+    <Content Include="Content\detaildes\21687450_328306474306488_2468450975588946967_n.jpg" />
+    <Content Include="Content\detaildes\22491659_1610739425654925_1521054441434317918_n.jpg" />
+    <Content Include="Content\detaildes\22549727_541572446186824_8715094758760435412_n.jpg" />
+    <Content Include="Content\detaildes\22728781_120143928748186_2800609925761965072_n.jpg" />
+    <Content Include="Content\detaildes\22904930_1834774023499694_8137082664818167833_o.jpg" />
+    <Content Include="Content\detaildes\23168049_1412255578889861_8166773307913677476_n.jpg" />
+    <Content Include="Content\detaildes\23318994_1698132063593645_3849239066649227770_n.jpg" />
+    <Content Include="Content\detaildes\23517438_850100625157527_7854179620556435978_n.jpg" />
+    <Content Include="Content\detaildes\23554621_1992850634304698_3817408907400183808_n.jpg" />
+    <Content Include="Content\detaildes\23622401_2025813627700157_5918747730053043775_n.jpg" />
+    <Content Include="Content\detaildes\23659553_1480411045409047_1032891138489596296_n.jpg" />
+    <Content Include="Content\detaildes\23659630_1845162225794207_7484086067107452682_n.jpg" />
+    <Content Include="Content\detaildes\23722701_102992717150178_92401937954924895_n.jpg" />
+    <Content Include="Content\detaildes\23755536_2077690859172649_5679051580639739679_n.jpg" />
+    <Content Include="Content\detaildes\23755576_1845162732460823_7920440027983456569_n.jpg" />
+    <Content Include="Content\detaildes\23795685_1845171562459940_565197120350556779_n.jpg" />
+    <Content Include="Content\detaildes\23844860_1845332839110479_8014291693049218992_n.jpg" />
+    <Content Include="Content\detaildes\88eleoiJrAY.css" />
+    <Content Include="Content\detaildes\aDrBO-VO3Xj.png" />
+    <Content Include="Content\detaildes\AHByTREnbGY.png" />
+    <Content Include="Content\detaildes\ben-borowiecki.jpg" />
+    <Content Include="Content\detaildes\bsmasthead.css" />
+    <Content Include="Content\detaildes\bsplayer.css" />
+    <Content Include="Content\detaildes\cap-doi-hyeri-va-jo-jung-suk-tung-bo-anh-moi-chup-cho-tap-chi-bazaar-khi-two-cops-con-chua-len-song.jpg" />
+    <Content Include="Content\detaildes\chua-du-tuoi-cac-sao-nhi-nay-bi-cam-ca-xem-phim-cua-minh-dong.jpg" />
+    <Content Include="Content\detaildes\cLGjprAERFO.css" />
+    <Content Include="Content\detaildes\comments.html" />
+    <Content Include="Content\detaildes\daniel-radcliffe.jpg" />
+    <Content Include="Content\detaildes\derek-deadman.jpg" />
+    <Content Include="Content\detaildes\DetailCss.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\detaildes\edLoz3xikQz.png" />
+    <Content Include="Content\detaildes\EQozilCmlol.css" />
+    <Content Include="Content\detaildes\ETwiwQ2shDB.png" />
+    <Content Include="Content\detaildes\FACE_WITH_COLON_THREE.png" />
+    <Content Include="Content\detaildes\fantastic-beasts-and-where-to-find-them-nguon-goc-nhung-sinh-vat-huyen-bi-trailer.jpg" />
+    <Content Include="Content\detaildes\fastbutton.html" />
+    <Content Include="Content\detaildes\fiona-shaw.jpg" />
+    <Content Include="Content\detaildes\fonts.css" />
+    <Content Include="Content\detaildes\harry-melling.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-bao-boi-tu-than-1.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-bao-boi-tu-than-2.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-chiec-coc-lua.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-hoang-tu-lai.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-hon-da-phu-thuy.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-menh-lenh-phuong-hoang.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-phong-chua-bi-mat.jpg" />
+    <Content Include="Content\detaildes\harry-potter-va-ten-tu-nhan-nguc-azkaban.jpg" />
+    <Content Include="Content\detaildes\hdonline-970x250-nu.gif" />
+    <Content Include="Content\detaildes\heather-graham-nude-sex-scene-in-killing-me-softly-8456-1.jpg" />
+    <Content Include="Content\detaildes\hec-quyn.jpg" />
+    <Content Include="Content\detaildes\ian-hart.jpg" />
+    <Content Include="Content\detaildes\iframeplay.html" />
+    <Content Include="Content\detaildes\image.png" />
+    <Content Include="Content\detaildes\imdb.png" />
+    <Content Include="Content\detaildes\iymVeSqkMrf.css" />
+    <Content Include="Content\detaildes\j52t_cevxA6.css" />
+    <Content Include="Content\detaildes\john-hurt.jpg" />
+    <Content Include="Content\detaildes\kham-pha-diem-giong-nhau-giua-emma-watson-va-belle-trong-beauty-and-the-beast.jpg" />
+    <Content Include="Content\detaildes\L6V-CeFlZMT.css" />
+    <Content Include="Content\detaildes\lee-yeon-hee-chia-se-suy-nghi-cua-minh-sau-khi-the-package-ket-thuc.jpg" />
+    <Content Include="Content\detaildes\like.html" />
+    <Content Include="Content\detaildes\loat-phim-18-dot-chay-man-anh-han-quoc-2015.jpg" />
+    <Content Include="Content\detaildes\logo.png" />
+    <Content Include="Content\detaildes\lY4eZXm_YWu%281%29.html" />
+    <Content Include="Content\detaildes\lY4eZXm_YWu.html" />
+    <Content Include="Content\detaildes\maggie-smith-poster.jpg" />
+    <Content Include="Content\detaildes\media-queries.css" />
+    <Content Include="Content\detaildes\nhac-toi-pham-bang-bang-nguoi-ta-thuong-nho-toi-gia-tai-canh-nong-do-so.jpg" />
+    <Content Include="Content\detaildes\nhung-gia-thiet-den-toi-lam-ban-nghi-khac-ve-harry-potter-phan-2.jpg" />
+    <Content Include="Content\detaildes\nhung-gia-thiet-den-toi-nhat-du-de-duc-khoet-toan-bo-ki-uc-dep-cua-ban-ve-harry-potter.jpg" />
+    <Content Include="Content\detaildes\nhung-lan-sao-hoa-ngu-bi-boc-me-chuyen-noi-doi-da-lam-soi-suc-gioi-cbiz.jpg" />
+    <Content Include="Content\detaildes\nhung-phim-hoat-hinh-ra-mat-2018-ma-chac-chan-ban-khong-the-ngo-lo.jpg" />
+    <Content Include="Content\detaildes\nhung-sao-nu-han-so-huu-nhan-sac-va-than-thai-dep-den-muc-fan-tin-rang-nen-di-thi-hoa-hau.jpg" />
+    <Content Include="Content\detaildes\now-you-see-me-2.jpg" />
+    <Content Include="Content\detaildes\O6cddFuTPBA.html" />
+    <Content Include="Content\detaildes\Op_1.png" />
+    <Content Include="Content\detaildes\p2HLem7QnSs.css" />
+    <Content Include="Content\detaildes\PACMAN.png" />
+    <Content Include="Content\detaildes\page.html" />
+    <Content Include="Content\detaildes\phu-thuy-hermione-la-nhan-vat-nu-hu-cau-duoc-men-mo-nhat.jpg" />
+    <Content Include="Content\detaildes\player%281%29.css" />
+    <Content Include="Content\detaildes\player.css" />
+    <Content Include="Content\detaildes\post-widget.css" />
+    <Content Include="Content\detaildes\postmessageRelay.html" />
+    <Content Include="Content\detaildes\reset.css" />
+    <Content Include="Content\detaildes\richard-bremmer.jpg" />
+    <Content Include="Content\detaildes\richard-griffiths.jpg" />
+    <Content Include="Content\detaildes\richard-harris.jpg" />
+    <Content Include="Content\detaildes\robbie-coltrane.jpg" />
+    <Content Include="Content\detaildes\saunders-triplets.jpg" />
+    <Content Include="Content\detaildes\saved_resource.html" />
+    <Content Include="Content\detaildes\server.html" />
+    <Content Include="Content\detaildes\style.black.css" />
+    <Content Include="Content\detaildes\style.css" />
+    <Content Include="Content\detaildes\theme-default.css" />
+    <Content Include="Content\detaildes\Tuy0HE9Jjb_.css" />
+    <Content Include="Content\detaildes\verne-troyer.jpg" />
+    <Content Include="Content\detaildes\voldemort-origin-of-the-heir-tung-trailer-dau-tien-day-bi-an.jpg" />
+    <Content Include="Content\detaildes\VoO3JqRk3F8.css" />
+    <Content Include="Content\detaildes\warwick-davis.jpg" />
+    <Content Include="Content\detaildes\www-player-2x-webp-vflR_W79D.css" />
+    <Content Include="Content\detaildes\xti.html" />
+    <Content Include="Content\mobile\css\base.css" />
+    <Content Include="Content\mobile\css\custome.css" />
+    <Content Include="Content\mobile\css\mediaelementplayer.min.css" />
+    <Content Include="Content\mobile\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\mobile\fonts\readme.txt" />
+    <Content Include="Content\mobile\images\logo-red-100.png" />
+    <Content Include="Content\mobile\images\samples\landscape.jpg" />
+    <Content Include="Content\mobile\images\users\avatar-001.jpg" />
+    <Content Include="Content\mobile\index\ben-borowiecki.jpg" />
+    <Content Include="Content\mobile\index\daniel-radcliffe.jpg" />
+    <Content Include="Content\mobile\index\derek-deadman.jpg" />
+    <Content Include="Content\mobile\index\fiona-shaw.jpg" />
+    <Content Include="Content\mobile\index\harry-melling.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-bao-boi-tu-than-1.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-bao-boi-tu-than-2.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-chiec-coc-lua.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-hoang-tu-lai.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-hon-da-phu-thuy.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-menh-lenh-phuong-hoang.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-phong-chua-bi-mat.jpg" />
+    <Content Include="Content\mobile\index\harry-potter-va-ten-tu-nhan-nguc-azkaban.jpg" />
+    <Content Include="Content\mobile\index\ian-hart.jpg" />
+    <Content Include="Content\mobile\index\john-hurt.jpg" />
+    <Content Include="Content\mobile\index\maggie-smith-poster.jpg" />
+    <Content Include="Content\mobile\index\richard-bremmer.jpg" />
+    <Content Include="Content\mobile\index\richard-griffiths.jpg" />
+    <Content Include="Content\mobile\index\richard-harris.jpg" />
+    <Content Include="Content\mobile\index\robbie-coltrane.jpg" />
+    <Content Include="Content\mobile\index\saunders-triplets.jpg" />
+    <Content Include="Content\mobile\index\verne-troyer.jpg" />
+    <Content Include="Content\mobile\index\warwick-davis.jpg" />
+    <Content Include="Content\mobile\js\base.js" />
+    <Content Include="Content\mobile\js\jRate.min.js" />
+    <Content Include="Content\mobile\js\lib.vp.js" />
+    <Content Include="Content\mobile\js\mediaelement-and-player.js" />
+    <Content Include="Content\mobile\js\mep-feature-ads-vast.js" />
+    <Content Include="Content\mobile\js\mep-feature-ads.js" />
+    <Content Include="Content\mobile\js\mep-feature-qualities.js" />
+    <Content Include="Content\mobile\player\v2\2.1.31\jwplayer.js" />
+    <Content Include="Content\mobile\player\v2\2.1.31\player.css" />
+    <Content Include="Content\noel2015\icon-menu.png" />
+    <Content Include="Content\noel2015\icon_news.png" />
+    <Content Include="Content\noel2015\icon_news_hover.png" />
+    <Content Include="Content\noel2015\logo.png" />
+    <Content Include="d2.hadarone.com\ads-sync.js" />
+    <Content Include="d3.hadarone.com\ads-sync.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="i\resources\new\film\215x311\2014\08\14\ke-xau-dep-trai.jpg" />
+    <Content Include="i\resources\new\film\215x311\2014\08\22\quan-van-truong.jpg" />
+    <Content Include="i\resources\new\film\215x311\2014\08\25\dich-nhan-kiet-rong-bien-troi-day.jpg" />
+    <Content Include="i\resources\new\film\215x311\2014\08\26\yeu-nu-xai-hang-hieu.jpg" />
+    <Content Include="i\resources\new\film\215x311\2015\01\14\mang-doi-mang.jpg" />
+    <Content Include="i\resources\new\film\215x311\2015\06\29\sat-pha-lang-2.jpg" />
+    <Content Include="i\resources\new\film\215x311\2015\07\11\troc-yeu-ky.jpg" />
+    <Content Include="i\resources\new\film\215x311\2015\09\28\tremors-5-bloodlines.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\02\29\dirty-lies-cuoc-chien-doi-tra.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\03\02\the-midnight-man.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\03\21\showdown-in-manila.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\03\26\airlift-cuoc-di-tan-lich-su.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\10\10\the-map-against-the-world.jpg" />
+    <Content Include="i\resources\new\film\215x311\2016\10\24\birth-of-the-dragon.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\01\19\star-wars-rogue-one.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\03\27\stand-by-me.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\04\18\the-hitmans-bodyguar.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\12\cuop-bien-vung-caribe-5.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\15\overdrive-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\16\ancien-and-the-magic-tablet.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\22\untitled-1.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\23\the-beguiled.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\06\24\my-vampire-school-sister.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\07\05\elegant-yokai-apartment-life.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\07\13\valerian-and-the-city-of-a-thousand-planets.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\07\18\the-son-of-bigfoot.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\07\24\american-made.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\07\30\fatal-countdown-reset.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\08\04\in-this-corner-of-the-world.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\08\20\nha-so-81-kinh-thanh-2.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\08\29\captain-underpants.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\08\31\cars-3.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\02\peace-breaker.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\02\tam-sinh-tam-the-thap-ly-dao-hoa.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\04\kamen-rider-build.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\07\man-who-sets-the-table.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\13\youre-my-destiny.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\19\temperature-of-love.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\21\devils-whisper-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\25\it-chu-he-ma-quai.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\26\vu-no-lon-11.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\09\29\the-gifted.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\02\chua-te-dia-nguc-3.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\02\seal-team-doi-dac-nhiem.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\06\van-helsing-khac-tinh-cua-ma-ca-rong-2.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\07\ngay-xua-ngay-xua-7.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\09\because-this-is-my-first-life-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\09\madam-secretary-ba-bo-truong-4.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\09\the-exorcist-quy-am-2.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\20th-century-boy-and-girl.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\blade-runner-2049-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\i-can-speak.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\nu-sieu-nhan-3.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\radius-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\the-walking-dead-xac-song-8.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\thor-ragnarok-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\untitled-5.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\10\witchs-court-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\12\mr-robot-sieu-hack-3.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\13\avengers-social-club.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\26\oh-my-general-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\27\i-cannot-hug-you.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\27\queen-dugu.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\10\31\phap-su-bat-dac-di.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\01\rule-the-world.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\01\the-nut-job-2.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\01\two-car-racing-sidecar.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\03\jungle-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\06\confusedly-in-love-rak-kan-panlawan1.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\07\rainbow-sea-storm-familia.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\08\victoria-abdul.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\09\eternal-wave-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\09\my-huckleberry-friends-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\10\untitled-1.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\11\dac-vu-shield-5.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\11\phan-kim-lien-vuot-thoi-gian.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\13\octb-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\13\once-upon-a-time-in-macau-the-way-of-the-tiger.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\13\the-blood-hound.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\13\the-robot-giant.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\beyond-skyline.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\ciel-rouge.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\cool-we-can-not-sad-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\day-dan-am-ap-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\downsizing-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\gong-shou-dao-cong-thu-dao.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\lino-va-7-kiep-nan.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\lying-heart-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\14\tuong-quan-o-tren-ta-o-duoi-thuyet-minh.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\15\bad-guys-2-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\15\logan-lucky.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\fate-kaleid-liner-prisma-illya-oath-under-snow.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\love-returns-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\mayhem-vi-rut-cuong-loan.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\oversized-cops-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\the-greatest-showman1.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\16\the-little-vampire.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\17\escape-route.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\17\new-years-eve.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\17\the-punisher.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\17\tofu-dau-phuc-tu-tien.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\19\blade-of-the-immortal.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\20\our-glamorous-times-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\20\where-the-lost-ones-go-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\21\geostorm-2017.jpg" />
+    <Content Include="i\resources\new\film\215x311\2017\11\21\nu-hon-dinh-menh-thuyet-minh.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\6-mi-nhan-han-bi-vo-duyen-voi-ban-dien-dong-voi-ai-cung-nhat-muon-tat-tv.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\dai-nbc-cua-my-se-lam-phim-ve-gioi-tai-phiet-han-quoc.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\day-la-nhung-cau-thoai-de-doi-cua-bo-phim-o.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\hau-chia-tay-phim-ket-thuc-suzy-bay-to-hop-tac-cung-lee-jong-suk-rat-an-y-nhip-nhang.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\hau-chia-tay-suzy-tung-anh-hau-truong-tinh-be-binh-cung-lee-jong-suk.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\hinh-chieu-lam-xuat-hien-tro-lai-trong-phim-truyen-hinh-moi-khong-the-om-lay-em.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\mac-che-bai-dien-xuat-ra-sao-thi-chuyen-cua-angelababy-chi-can-dep-la-du-roi.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\nhiet-do-tinh-yeu-cuoi-cung-nam-phu-da-tu-bo-y-dinh-cho-doi-co-gai-khong-thuoc-ve-anh.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\poster-cua-tac-pham-dracula-dang-la-poster-dat-gia-nhat-the-gioi.jpg" />
+    <Content Include="i\resources\new\post\thumb\2017\11\21\yoonah-cung-dan-dien-vien-khong-phai-dang-vua-tham-gia-buoi-cong-chieu-the-swindlers.jpg" />
+    <Content Include="Content\mobile\index\airlift-cuoc-di-tan-lich-su.jpg" />
+    <Content Include="Content\mobile\index\american-assassin-2017.jpg" />
+    <Content Include="Content\mobile\index\ancien-and-the-magic-tablet.jpg" />
+    <Content Include="Content\mobile\index\anh-hung.jpg" />
+    <Content Include="Content\mobile\index\avatar-001.jpg" />
+    <Content Include="Content\mobile\index\base.css" />
+    <Content Include="Content\mobile\index\blade-of-the-immortal.jpg" />
+    <Content Include="Content\mobile\index\boruto-naruto-next-generations.jpg" />
+    <Content Include="Content\mobile\index\bsplayer.css" />
+    <Content Include="Content\mobile\index\children-of-the-whales.jpg" />
+    <Content Include="Content\mobile\index\cookie_enabled_get_apac.html" />
+    <Content Include="Content\mobile\index\cookie_loader.html" />
+    <Content Include="Content\mobile\index\custome.css" />
+    <Content Include="Content\mobile\index\devils-whisper-2017.jpg" />
+    <Content Include="Content\mobile\index\dich-nhan-kiet-rong-bien-troi-day.jpg" />
+    <Content Include="Content\mobile\index\geostorm-2017.jpg" />
+    <Content Include="Content\mobile\index\happy-death-day-2017.jpg" />
+    <Content Include="Content\mobile\index\hdonlinevn.png" />
+    <Content Include="Content\mobile\index\itazurana-kiss-part-1-high-school-hen.jpg" />
+    <Content Include="Content\mobile\index\jungle-2017.jpg" />
+    <Content Include="Content\mobile\index\juni-taisen-zodiac-war.jpg" />
+    <Content Include="Content\mobile\index\ke-xau-dep-trai.jpg" />
+    <Content Include="Content\mobile\index\landscape.jpg" />
+    <Content Include="Content\mobile\index\logo-red-100%281%29.png" />
+    <Content Include="Content\mobile\index\logo-red-100.png" />
+    <Content Include="Content\mobile\index\marvels-guardians-of-the-galaxy.jpg" />
+    <Content Include="Content\mobile\index\mediaelementplayer.min.css" />
+    <Content Include="Content\mobile\index\meloholic-2017.jpg" />
+    <Content Include="Content\mobile\index\my-ages-apart-2017.jpg" />
+    <Content Include="Content\mobile\index\phap-su-bat-dac-di.jpg" />
+    <Content Include="Content\mobile\index\player.css" />
+    <Content Include="Content\mobile\index\popup_promote_wap.jpg" />
+    <Content Include="Content\mobile\index\quan-van-truong.jpg" />
+    <Content Include="Content\mobile\index\raiders-of-the-lost-ark.jpg" />
+    <Content Include="Content\mobile\index\saved_resource%281%29.html" />
+    <Content Include="Content\mobile\index\saved_resource.html" />
+    <Content Include="Content\mobile\index\stan-against-evil-2.jpg" />
+    <Content Include="Content\mobile\index\temperature-of-love.jpg" />
+    <Content Include="Content\mobile\index\the-flash-4.jpg" />
+    <Content Include="Content\mobile\index\the-good-doctor.jpg" />
+    <Content Include="Content\mobile\index\the-punisher.jpg" />
+    <Content Include="Content\mobile\index\thi-tran-riverdale-2.jpg" />
+    <Content Include="Content\mobile\index\thor-ragnarok-2017.jpg" />
+    <Content Include="Content\mobile\index\toan-chuc-phap-su-2.jpg" />
+    <Content Include="Content\mobile\index\tremors-5-bloodlines.jpg" />
+    <Content Include="Content\mobile\index\truy-tim-bang-chung-1.jpg" />
+    <Content Include="Content\mobile\index\uq-holder-mahou-sensei-negima.jpg" />
+    <Content Include="Content\mobile\index\urahara-nhung-co-nang-quan-harajuku.jpg" />
+    <Content Include="Content\mobile\index\where-the-lost-ones-go-2017.jpg" />
+    <Content Include="Content\mobile\index\youre-my-destiny.jpg" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\mobile\js\analytics.min.js" />
+    <Content Include="Content\mobile\index\ad" />
+    <Content Include="Content\mobile\index\ads" />
+    <Content Include="Content\mobile\index\ads-api-sync.js" />
+    <Content Include="Content\mobile\index\ads-async.js" />
+    <Content Include="Content\mobile\index\ads-sync.js%281%29.download" />
+    <Content Include="Content\mobile\index\ads-sync.js%282%29.download" />
+    <Content Include="Content\mobile\index\ads-sync.js" />
+    <Content Include="Content\mobile\index\analytics.min.js" />
+    <Content Include="Content\mobile\index\base.js" />
+    <Content Include="Content\mobile\index\beacon.js" />
+    <Content Include="Content\mobile\index\bsc.js" />
+    <Content Include="Content\mobile\index\bsca.js" />
+    <Content Include="Content\mobile\index\bsdmp.js" />
+    <Content Include="Content\mobile\index\bsinflow.js" />
+    <Content Include="Content\mobile\index\bsplayer.js" />
+    <Content Include="Content\mobile\index\collect.js" />
+    <Content Include="Content\mobile\index\compass.js" />
+    <Content Include="Content\mobile\index\css" />
+    <Content Include="Content\mobile\index\css%281%29" />
+    <Content Include="Content\mobile\index\css%282%29" />
+    <Content Include="Content\mobile\index\ga.js" />
+    <Content Include="Content\mobile\index\gpt.js" />
+    <Content Include="Content\mobile\index\integrator.js" />
+    <Content Include="Content\mobile\index\jquery.min.js" />
+    <Content Include="Content\mobile\index\jRate.min.js" />
+    <Content Include="Content\mobile\index\jwplayer.js" />
+    <Content Include="Content\mobile\index\lib.vp.js" />
+    <Content Include="Content\mobile\index\mediaelement-and-player.js" />
+    <Content Include="Content\mobile\index\mep-feature-ads-vast.js" />
+    <Content Include="Content\mobile\index\mep-feature-ads.js" />
+    <Content Include="Content\mobile\index\mep-feature-qualities.js" />
+    <Content Include="Content\mobile\index\osd.js" />
+    <Content Include="Content\mobile\index\osd_listener.js" />
+    <Content Include="Content\mobile\index\post-widget.js" />
+    <Content Include="Content\mobile\index\pubads_impl_168.js" />
+    <Content Include="Content\mobile\index\pubads_impl_rendering_168.js" />
+    <Content Include="Content\mobile\index\show_ads_blueseed.js%281%29.download" />
+    <Content Include="Content\mobile\index\show_ads_blueseed.js%282%29.download" />
+    <Content Include="Content\mobile\index\show_ads_blueseed.js%283%29.download" />
+    <Content Include="Content\mobile\index\show_ads_blueseed.js" />
+    <Content Include="Content\mobile\index\status" />
+    <Content Include="Content\mobile\index\webfont.js" />
+    <Content Include="Content\mobile\index\xfbml.ad.js" />
+    <Content Include="Content\mobile\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\mobile\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\mobile\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\mobile\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\mobile\fonts\FontAwesome.otf" />
+    <Content Include="Content\detaildes\1765587600-postmessagerelay.js" />
+    <Content Include="Content\detaildes\1kRjBElvavi.js" />
+    <Content Include="Content\detaildes\2aX-6K87izI.js" />
+    <Content Include="Content\detaildes\4EnoUPJOF7o.js" />
+    <Content Include="Content\detaildes\4IHbjP6893G.js" />
+    <Content Include="Content\detaildes\5peEXbVGXvx.js" />
+    <Content Include="Content\detaildes\69R6jxYtiKN.js" />
+    <Content Include="Content\detaildes\74iCxOiB92Z.js" />
+    <Content Include="Content\detaildes\ads-sync.js%281%29.download" />
+    <Content Include="Content\detaildes\ads-sync.js" />
+    <Content Include="Content\detaildes\ads.js" />
+    <Content Include="Content\detaildes\ad_status.js" />
+    <Content Include="Content\detaildes\analytics-tags.js" />
+    <Content Include="Content\detaildes\analytics.js" />
+    <Content Include="Content\detaildes\analytics.min.js%281%29.download" />
+    <Content Include="Content\detaildes\analytics.min.js" />
+    <Content Include="Content\detaildes\balloon.js" />
+    <Content Include="Content\detaildes\base.js" />
+    <Content Include="Content\detaildes\beacon.js" />
+    <Content Include="Content\detaildes\bs-inread-HTMLv1.0.js" />
+    <Content Include="Content\detaildes\bsmasthead.js" />
+    <Content Include="Content\detaildes\bsplayer.js" />
+    <Content Include="Content\detaildes\cb=gapi%281%29.loaded_0" />
+    <Content Include="Content\detaildes\cb=gapi.loaded_0" />
+    <Content Include="Content\detaildes\cb=gapi.loaded_1" />
+    <Content Include="Content\detaildes\CLCcMausp1F.js" />
+    <Content Include="Content\detaildes\copypaste.js" />
+    <Content Include="Content\detaildes\createjs-2015.11.26.min.js" />
+    <Content Include="Content\detaildes\cZz-tKaZY1j.js" />
+    <Content Include="Content\detaildes\display.js" />
+    <Content Include="Content\detaildes\doRC6IlXYix.js" />
+    <Content Include="Content\detaildes\email-decode.min.js" />
+    <Content Include="Content\detaildes\eMybxxqSi2Q.js" />
+    <Content Include="Content\detaildes\Fi8h8LksnJk.js" />
+    <Content Include="Content\detaildes\g-OsT3Sv6z5.js" />
+    <Content Include="Content\detaildes\gjACuZz8Hal.js" />
+    <Content Include="Content\detaildes\gTbBxylKYzG.js" />
+    <Content Include="Content\detaildes\hHcRpQF0Uhn.js" />
+    <Content Include="Content\detaildes\hls.min.js" />
+    <Content Include="Content\detaildes\IaY1hwyiuWC.js" />
+    <Content Include="Content\detaildes\ima3.js" />
+    <Content Include="Content\detaildes\iqNCfhaNZ4b.js" />
+    <Content Include="Content\detaildes\jwplayer.js%281%29.download" />
+    <Content Include="Content\detaildes\jwplayer.js" />
+    <Content Include="Content\detaildes\k0M8DkBODHV.js" />
+    <Content Include="Content\detaildes\K95fB-dQIzD.js" />
+    <Content Include="Content\detaildes\L3AyxeTeRMl.js" />
+    <Content Include="Content\detaildes\lib.hdo.min.js" />
+    <Content Include="Content\detaildes\lib.hdo.player.js" />
+    <Content Include="Content\detaildes\library.js" />
+    <Content Include="Content\detaildes\lIoZRCe7v6z.js" />
+    <Content Include="Content\detaildes\logo2.js" />
+    <Content Include="Content\detaildes\Mdtx6YFYaSu.js" />
+    <Content Include="Content\detaildes\mwDKRsQBNbI.js" />
+    <Content Include="Content\detaildes\nQO1rYMhR_e.js" />
+    <Content Include="Content\detaildes\p16" />
+    <Content Include="Content\detaildes\p46" />
+    <Content Include="Content\detaildes\p50" />
+    <Content Include="Content\detaildes\p61" />
+    <Content Include="Content\detaildes\plusone.js" />
+    <Content Include="Content\detaildes\post-widget.js" />
+    <Content Include="Content\detaildes\provider.youtube.js" />
+    <Content Include="Content\detaildes\qhNZrf6stjm.js" />
+    <Content Include="Content\detaildes\rpc_shindig_random.js" />
+    <Content Include="Content\detaildes\rs=AGLTcCOByQQ-ItN9B1zHg98WYPcl7VNBuQ" />
+    <Content Include="Content\detaildes\saved_resource" />
+    <Content Include="Content\detaildes\script.detail.js" />
+    <Content Include="Content\detaildes\script.footer.js" />
+    <Content Include="Content\detaildes\script.header.js" />
+    <Content Include="Content\detaildes\sdk.js%281%29.download" />
+    <Content Include="Content\detaildes\sdk.js%282%29.download" />
+    <Content Include="Content\detaildes\sdk.js" />
+    <Content Include="Content\detaildes\settings.js" />
+    <Content Include="Content\detaildes\shareQuote.js" />
+    <Content Include="Content\detaildes\show_ads_blueseed.js" />
+    <Content Include="Content\detaildes\SystemSettings.js" />
+    <Content Include="Content\detaildes\TlEmlryBs2P.js" />
+    <Content Include="Content\detaildes\ttn.min.js" />
+    <Content Include="Content\detaildes\userreport.js" />
+    <Content Include="Content\detaildes\vBYmFM9ASV-.js" />
+    <Content Include="Content\detaildes\vykNM2F1qpy.js" />
+    <Content Include="Content\detaildes\WFRrno_Ni5v.js" />
+    <Content Include="Content\detaildes\widgets.js" />
+    <Content Include="Content\detaildes\wkEiLtU5Fj1.js" />
+    <Content Include="Content\detaildes\wrOX1JSXAsdEvqoNzI-5sTKxsh1zK7AKyt5OXFOZqL4.js" />
+    <Content Include="Content\detaildes\www-embed-player.js" />
+    <Content Include="Content\detaildes\www-widgetapi.js" />
+    <Content Include="Content\detaildes\zgnR2Tt59n9.js" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\respond.js" />
+    <Content Include="Scripts\respond.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="sdk.accountkit.com\vi_VN\sdk.js" />
+    <Content Include="template\frontend\css\fonts.css" />
+    <Content Include="template\frontend\css\media-queries.css" />
+    <Content Include="template\frontend\css\nologin\style.css" />
+    <Content Include="template\frontend\css\reset.css" />
+    <Content Include="template\frontend\css\style.black.css" />
+    <Content Include="template\frontend\css\style.css" />
+    <Content Include="template\frontend\fonts\Lobster-Regular.svg" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-BOLD.html" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-BOLD.svg" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-REGULAR.svg" />
+    <Content Include="template\frontend\fonts\opensans-italic.svg" />
+    <Content Include="template\frontend\fonts\OpenSans-Semibold.svg" />
+    <Content Include="template\frontend\fonts\opensansbold.svg" />
+    <Content Include="template\frontend\fonts\OpenSansLight.svg" />
+    <Content Include="template\frontend\fonts\opensansregular.svg" />
+    <Content Include="template\frontend\fonts\SamsungOne-400.html" />
+    <Content Include="template\frontend\fonts\SamsungOne-401.html" />
+    <Content Include="template\frontend\fonts\UTM-Avo.svg" />
+    <Content Include="template\frontend\fonts\UTM-AvoBold.svg" />
+    <Content Include="template\frontend\fonts\UVNVan_B.svg" />
+    <Content Include="template\frontend\images\arr-left.png" />
+    <Content Include="template\frontend\images\arr-right.png" />
+    <Content Include="template\frontend\images\favicon.ico" />
+    <Content Include="template\frontend\images\float-logo-Pose.png" />
+    <Content Include="template\frontend\images\icon_news.png" />
+    <Content Include="template\frontend\images\logo.png" />
+    <Content Include="template\frontend\images\overlay_rich.png" />
+    <Content Include="template\frontend\images\scrollUp.png" />
+    <Content Include="template\frontend\images\tip\arrowleft.png" />
+    <Content Include="template\frontend\images\tip\wait.gif" />
+    <Content Include="template\frontend\images\watchlist.png" />
+    <Content Include="template\frontend\js\ads.js" />
+    <Content Include="template\frontend\js\lib.hdo.min.js" />
+    <Content Include="template\frontend\js\lib.hdo.player.js" />
+    <Content Include="template\frontend\js\library.js" />
+    <Content Include="template\frontend\js\logo2.js" />
+    <Content Include="template\frontend\js\nologin\floating.js" />
+    <Content Include="template\frontend\js\script.footer.js" />
+    <Content Include="template\frontend\js\script.header.js" />
+    <Content Include="template\frontend\js\ttn.min.js" />
+    <Content Include="template\frontend\noel2015\icon-menu.png" />
+    <Content Include="template\frontend\noel2015\icon_news.png" />
+    <Content Include="template\frontend\noel2015\icon_news_hover.png" />
+    <Content Include="template\frontend\noel2015\logo.png" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="template\frontend\fonts\iCielSamsungSharpSans-Bold.eot" />
+    <Content Include="template\frontend\fonts\iCielSamsungSharpSans-Bold.ttf" />
+    <Content Include="template\frontend\fonts\iCielSamsungSharpSans-Bold.woff" />
+    <Content Include="template\frontend\fonts\iCielSamsungSharpSans-Boldd41d.eot" />
+    <Content Include="template\frontend\fonts\Lobster-Regular.eot" />
+    <Content Include="template\frontend\fonts\Lobster-Regular.ttf" />
+    <Content Include="template\frontend\fonts\Lobster-Regular.woff" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-BOLD.svg.readme" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-BOLD.ttf" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-REGULAR.eot" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-REGULAR.svg.readme" />
+    <Content Include="template\frontend\fonts\MYRIADPRO-REGULAR.ttf" />
+    <Content Include="template\frontend\fonts\opensans-italic.eot" />
+    <Content Include="template\frontend\fonts\opensans-italic.ttf" />
+    <Content Include="template\frontend\fonts\opensans-italic.woff" />
+    <Content Include="template\frontend\fonts\opensans-italicd41d.eot" />
+    <Content Include="template\frontend\fonts\OpenSans-Regular.ttf" />
+    <Content Include="template\frontend\fonts\OpenSans-Semibold.ttf" />
+    <Content Include="template\frontend\fonts\OpenSans-Semibold.woff" />
+    <Content Include="template\frontend\fonts\OpenSans-Semiboldd41d.eot" />
+    <Content Include="template\frontend\fonts\opensansbold.eot" />
+    <Content Include="template\frontend\fonts\opensansbold.ttf" />
+    <Content Include="template\frontend\fonts\opensansbold.woff" />
+    <Content Include="template\frontend\fonts\opensansboldd41d.eot" />
+    <Content Include="template\frontend\fonts\OpenSansLight.eot" />
+    <Content Include="template\frontend\fonts\OpenSansLight.ttf" />
+    <Content Include="template\frontend\fonts\OpenSansLight.woff" />
+    <Content Include="template\frontend\fonts\OpenSansLight.woff2" />
+    <Content Include="template\frontend\fonts\opensansregular.eot" />
+    <Content Include="template\frontend\fonts\opensansregular.ttf" />
+    <Content Include="template\frontend\fonts\opensansregular.woff" />
+    <Content Include="template\frontend\fonts\opensansregulard41d.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-400C.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-400C.ttf" />
+    <Content Include="template\frontend\fonts\SamsungOne-400C.woff" />
+    <Content Include="template\frontend\fonts\SamsungOne-400Cd41d.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-700.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-700.ttf" />
+    <Content Include="template\frontend\fonts\SamsungOne-700.woff" />
+    <Content Include="template\frontend\fonts\SamsungOne-700d41d.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-800.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-800.ttf" />
+    <Content Include="template\frontend\fonts\SamsungOne-800.woff" />
+    <Content Include="template\frontend\fonts\SamsungOne-800C.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-800C.ttf" />
+    <Content Include="template\frontend\fonts\SamsungOne-800C.woff" />
+    <Content Include="template\frontend\fonts\SamsungOne-800Cd41d.eot" />
+    <Content Include="template\frontend\fonts\SamsungOne-800d41d.eot" />
+    <Content Include="template\frontend\fonts\UTM-Avo.eot" />
+    <Content Include="template\frontend\fonts\UTM-Avo.ttf" />
+    <Content Include="template\frontend\fonts\UTM-Avo.woff" />
+    <Content Include="template\frontend\fonts\UTM-AvoBold.eot" />
+    <Content Include="template\frontend\fonts\UTM-AvoBold.ttf" />
+    <Content Include="template\frontend\fonts\UTM-AvoBold.woff" />
+    <Content Include="template\frontend\fonts\UVNVan_B.eot" />
+    <Content Include="template\frontend\fonts\UVNVan_B.ttf" />
+    <Content Include="template\frontend\fonts\UVNVan_B.woff" />
+    <Content Include="template\frontend\fonts\nologin\OpenSans-Regular.ttf" />
+    <Content Include="template\frontend\fonts\fontawesome-webfont.ttf" />
+    <Content Include="template\frontend\fonts\fontawesome-webfont.woff" />
+    <Content Include="Views\Shared\_Layout.Mobile.cshtml" />
+    <Content Include="Views\Home\Index.Mobile.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\Detail.Mobile.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+    <Folder Include="player\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="packages.config" />
+    <None Include="Project_Readme.html" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>3108</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:14235/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.0.0\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

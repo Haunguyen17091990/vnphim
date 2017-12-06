@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="template/frontend/images/favicon.ico" type="image/x-icon" />
+    <meta property="article:publisher" content="https://facebook.com/HDOCinema" />
+    <meta property="fb:app_id" content="138449339641932">
+    <meta property="fb:admins" content="100000410578756">
+    <meta property="og:site_name" content="HDOTV" />
+    <meta name="google-site-verification" content="h8MRtn5RhZ0DI9X-SsroAUPitHEi4F4MQmtUPrU45So" />
+    <meta name="robots" content="index, follow" />
+    <link href='template/frontend/css/reset.css' rel='stylesheet' type='text/css'>
+    <link href="template/frontend/css/style.css" rel="stylesheet" type="text/css">
+    <link href="template/frontend/css/style.black.css" rel="stylesheet" type="text/css">
+    <link href="template/frontend/css/fonts.css" rel="stylesheet" type="text/css">
+    <link href="template/frontend/css/media-queries.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">
+        if (navigator.userAgent.match(/Android/i)
+                || navigator.userAgent.match(/webOS/i)
+                || navigator.userAgent.match(/iPhone/i)
+                || navigator.userAgent.match(/iPad/i)
+                || navigator.userAgent.match(/iPod/i)
+                || navigator.userAgent.match(/BlackBerry/i)
+                || navigator.userAgent.match(/Windows Phone/i)
+                ) {
+            var parser = document.createElement('a');
+            parser.href = window.location.href;
+            var url = parser.protocol + "//m.hdonline.vn" + parser.pathname;
+            if (url.indexOf("m.hdonline.vn/") == -1) {
+                url = parser.protocol + "//m.hdonline.vn/" + parser.pathname;
+            }
+            window.location.href = url;
+        }
+        var alertMobile = true;
+        var isLogin = false;
+        var isFirstPay = false;
+        var isVip = false;
+        var userID = 0;
+        var BASE_URL = "http://hdonline.vn";
+        var CDN_URL = "http://static.hdonline.vn";
+        var SERVER_IMG = "http://static.hdonline.vn/i/resources/new/";
+        var SERVER_ID = "http://id.hdonline.vn";
+        var URL_FANPAGE = "https://facebook.com/HDOCinema";
+        var isBlockAds = true;
+        var HDOCONFIG = {
+            urlLike: "/episode/like",
+            urlLater: "/episode/later",
+            urlContact: "/contact/ajax",
+            urlSubscribe: "/episode/subscribe",
+            urlLogin: "/frontend/public/login",
+            urlLoginSSO: "/frontend/public/loginsso",
+            urlSearch: "/frontend/search/search",
+            urlLikePlus: "/frontend/episode/likeplus",
+            urlCommentPlus: "/frontend/episode/commentplus",
+            urlRate: "/frontend/episode/rateplus",
+            urlEpisodeLoad: "/episode/ajax",
+            urlFilmView: "/frontend/episode/updateview",
+            urlRegister: "/frontend/public/register",
+            urlContact: "/contact/ajax",
+            urlLoadEpisode: "/episode/ajax",
+            urlSetView: "/frontend/episode/updateview",
+            urlbuyPreroll: "/frontend/public/buypreroll",
+            refreshCaptcha: "/frontend/public/resfreshCaptcha",
+            urlRemoveWatchList: "/frontend/user/movieview",
+            urlAddWatchList: "/frontend/user/movieview",
+            urlGetMoreVideo: "/frontend/video/morevideo",
+            urlBroken: "/episode/broken",
+            facebookAPPID: 138449339641932,
+            urlAccountKitValidate: "http://id.hdonline.vn/cap-nhat-so-dien-thoai.html",
+            urlIframeMovieView: "/frontend/episode/iframe",
+            urlIframeVideoView: "/frontend/video/iframe"
+        }
+    </script>
+    <script type="text/javascript" src="template/frontend/js/library.js"></script>
+    <script type="text/javascript" src="player/v2/2.1.44/jwplayer.js"></script>
+    <script type="text/javascript" src="player/v2/2.1.44/hls.min.js"></script>
+    <link href="player/v2/2.1.44/player.css" rel="stylesheet" type="text/css">
+    <script src="template/frontend/js/lib.hdo.player.js"></script>
+    <script src="template/frontend/js/lib.hdo.min.js"></script>
+
+    <script src="sdk.accountkit.com/vi_VN/sdk.js"></script>
+    <script type="text/javascript" src="template/frontend/js/script.header.js"></script>
+    <script src="code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="template/frontend/js/logo2.js"></script>
+</head>
+@RenderBody()
+</html>
+<script type="text/javascript">
+    function close_popup() {
+        window.close();
+    }
+</script>
+
